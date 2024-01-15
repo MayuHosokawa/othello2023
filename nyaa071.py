@@ -143,18 +143,18 @@ class OthelloAI(object):
             return 'がーん'
 
 class OchibiAI(OthelloAI):
-    def __init__(self, face, name):
-        self.face = face
-        self.name = name
+    def __init__(self):
+        self.face = '👶' 
+        self.name = 'おちび'
 
     def move(self, board: np.array, piece: int) -> tuple[int, int]:
         valid_moves = get_valid_moves(board, piece)
         return random.choice(valid_moves) if valid_moves else (0, 0)
 
 class NyaaAI(OthelloAI):
-    def __init__(self, face, name, depth=3):
-        super().__init__(face, name)
-        self.depth = depth
+    def __init__(self):
+        self.face = '😼' 
+        self.name = 'にゃーん'
 
     def move(self, board: np.array, piece: int) -> tuple[int, int]:
         valid_moves = get_valid_moves(board, piece)
